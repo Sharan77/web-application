@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: 'Baloo paaji 2' , cursive;
+
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    background: whitesmoke;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-sizing: border-box;
+
+}
+.links{
+    display: flex;
+    list-style: none;
+}
+.links li {
+    margin-right: 24px;
+}
+.links li a {
+    text-decoration: none;
+    color: #999999;
+    letter-spacing: -0.5px;
+}
+.links li a:hover ,
+.links li a.active {
+    color: #000;
+}
+.sections{
+    padding-top: 50px;
+}
+section{
+    height: 100vh;
+    padding-left: 0px;
+    padding-top: 0px;
+    
+    color: #000;
+}
+section:nth-child(even) {
+    background:#f7ce74;
+    color:#000;
+}
+.icon{
+    width: 60px;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.icon span{
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: rgb(49,41,120);
+    border-radius: 9px;
+    transition: 0.25s ease-in-out all;
+}
+.icon span:nth-child(1){
+    top: 0;
+
+}
+.icon span:nth-child(2){
+    top: 18px;
+    
+}
+.icon span:nth-child(3){
+    top: 36px;
+    
+}
+.icon.open span:nth-child(1){
+    transform: rotate(45deg);
+    top: 18px;
+}
+.icon.open span:nth-child(2){
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.icon.open span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 18px;
+}
+#home{
+    height: 100vh;
+    overflow: hidden;
+    
+
+}
+    

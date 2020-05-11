@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h3 class="logo">Logo</h3>
+        <div class="link-wrapper">
+            <ul class="links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#login">Login</a></li>
+                <div class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <div class="sections">
+        <section id="home">
+            <div class="container">
+                <div class="box">
+                    <div class="imgBx">
+                        <img class="ac" src="HCW_2123-01-01.jpeg" alt="picture" width="1850px" height="auto">
+
+                    </div>
+                    <div class="containerBx">
+                        <h2>
+                            welcome To BloG!
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatibus, ex excepturi reprehenderit iusto architecto deleniti eius voluptates nisi odio eos sit numquam dolores accusantium quia sapiente ducimus ipsam consequatur?</p>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+        <section id="about">
+            <div class="your-element" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500"></div>
+        </section>
+        <section id="project">
+            <h1>project</h1>
+        </section>
+        <section id="login">
+            <h1>Login</h1>
+        </section>
+    </div>
+    <script>
+       
+       const sectionArray = document.querySelectorAll('section');
+        const sectionPos = {};
+
+        sectionArray.forEach((section) => {
+            sectionPos[section.id]= section.offsetTop
+        });
+        window.onscroll =() => {
+            var scrollPostion = document.documentElement.scrollTop || document.body.scrollTop;
+            for (id in sectionPos){
+                if (sectionPos[id] <= scrollPostion) {
+                    document.querySelector('.active').classList.remove('active');
+                    document.querySelector(`a[href*=${id}]`).classList.add('active');
+                }
+            }
+        }
+
+        const icon =document.querySelector('.icon');
+        icon.addEventListener('click', () => {
+            if (!icon.classList.contains('open')){
+                icon.classList.add('open');
+            } else {
+                icon.classList.remove('open');
+            }
+        });
+	VanillaTilt.init(document.querySelector(".your-element"), {
+		max: 25,
+		speed: 400
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".your-element"));
+</script>
+    </script>
+</body>
+</html>
